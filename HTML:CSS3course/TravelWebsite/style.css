@@ -1,5 +1,4 @@
-/* Global Styles */
-
+/* Global styles */
 * {
   margin: 0;
   padding: 0;
@@ -8,11 +7,9 @@
 html {
   font-size: 62.5%;
 }
-
 body {
   font-family: "Poppins", sans-serif;
 }
-
 h1 {
   font-size: 2.6rem;
 }
@@ -28,7 +25,7 @@ h2 {
 }
 h3 {
   font-size: 3rem;
-  font-weight: normal;
+  font-weight: 400;
 }
 h4,
 h5 {
@@ -38,41 +35,38 @@ a {
   color: white;
   text-decoration: none;
 }
+
 button {
   padding: 2rem 6rem;
-  background: #4c6e97;
+  background-color: #4c6e97;
   border: none;
   color: white;
   font-size: 1.8rem;
   cursor: pointer;
-  transition: background 0.5s ease-in-out;
+  transition: background 0.3s ease-in-out;
 }
 button:hover {
-  background: #27394e;
+  background-color: #233245;
 }
 
-/* Nav Section With HERO */
-
+/* nav section with hero */
 .main-head {
-  background: #131c27;
+  background-color: #131c27;
   color: white;
-  position: sticky;
-  top: 0px;
-  z-index: 3;
 }
+
 nav {
+  min-height: 10vh;
   display: flex;
   width: 90%;
   margin: auto;
-  padding: 2rem;
-  min-height: 10vh;
   align-items: center;
+  padding: 2rem;
   flex-wrap: wrap;
 }
-
 nav ul {
   display: flex;
-  flex: 1 1 40rem;
+  flex: 1 1 60rem;
   justify-content: space-around;
   align-items: center;
   list-style: none;
@@ -82,31 +76,29 @@ nav ul {
   font-family: "Pattaya", sans-serif;
   font-weight: 400;
 }
-
 .hero {
   min-height: 90vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.8), transparent),
-    url("./img/landing-page.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), transparent),
+    url("/img/landing-page.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
 }
+
 .hero h3 {
   padding: 5rem;
 }
-
-/* Locations SECTION */
-
+/* locations Section */
 #locations {
   min-height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.5), transparent),
-    url("./img/new-york-page.png");
+    url("/img/new-york-page.png");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -118,46 +110,40 @@ nav ul {
   width: 90%;
   margin: auto;
 }
+
 .locations-head h2 {
   padding: 1rem 0rem;
   text-decoration: underline;
-  /* Optional 
   text-decoration-thickness: 0.5rem;
-  */
 }
 .locations-head h3 {
   padding: 4rem 0rem;
-  background: linear-gradient(#131c27, #663b34);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
-
 .cloud {
   position: absolute;
   top: 0%;
   right: 0%;
 }
 .moving-cloud-1 {
-  animation: cloudAnimation 3s infinite alternate ease-in-out;
+  z-index: -1;
+  animation: cloudAnimation 4s infinite alternate ease-in-out;
 }
 .moving-cloud-2 {
   top: 20%;
-  z-index: -1;
   opacity: 0.5;
-  animation: cloudAnimation 3.5s infinite alternate ease-in-out;
+  z-index: -2;
+  animation: cloudAnimation 3s infinite alternate ease-in-out;
 }
-/* Cloud Animation */
-
 @keyframes cloudAnimation {
   from {
-    transform: translate(10%, -10%);
+    transform: translate(10%, -3%);
   }
   to {
-    transform: translate(0%, 0%);
+    transform: translate(0, 0);
   }
 }
 
-/* Benefits section*/
+/* Benefits section  */
 
 .benefits-head {
   background: #343c44;
@@ -173,7 +159,6 @@ nav ul {
 .benefits-head h3 {
   padding: 1rem;
 }
-
 .cards {
   width: 90%;
   margin: auto;
@@ -186,11 +171,10 @@ nav ul {
 .card {
   text-align: center;
   flex: 1 1 25rem;
-  min-height: 40vh;
+  min-height: 20vh;
   margin: 2rem 5rem;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 1), 0px 20px 20px rgba(0, 0, 0, 1);
 }
-
 .cards img {
   max-width: 15%;
   margin: 2rem;
@@ -198,31 +182,27 @@ nav ul {
 .card h4,
 .card p {
   padding: 1rem;
-  line-height: 1.8;
 }
 
 .card-icon {
-  background: #27394e;
+  background: #233245;
 }
-
-/* Contact Section */
-
+/* contact section */
 #contact {
   min-height: 100vh;
   background: linear-gradient(rgba(0, 0, 0, 0.5), transparent),
-    url("./img/contact-mountain.png");
+    url("/img/contact-mountain.png");
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
-
 .form-wrapper {
-  background: rgba(19, 28, 39, 0.8);
   width: 60%;
   color: white;
   border-radius: 20px;
+  background: rgba(19, 28, 39, 0.8);
 }
 .form-head {
   text-align: center;
@@ -233,8 +213,9 @@ nav ul {
   padding: 3rem;
   text-align: center;
 }
-.form-wrapper label {
+.form-wrapper {
   margin: 0rem 3rem;
+  width: 100%;
 }
 .form-wrapper button {
   width: 100%;
@@ -247,13 +228,14 @@ nav ul {
   padding: 1rem 3rem;
 }
 
-/* Footer Section */
-
 footer {
   color: white;
   background: rgba(19, 28, 39, 1);
 }
 .footer-wrapper {
+  display: flex;
+}
+.footer-wrapper ul {
   display: flex;
   padding: 2rem;
   width: 90%;
@@ -272,15 +254,6 @@ footer ul {
   justify-content: space-between;
   align-items: center;
 }
-
-/* Button focus to make website accessible */
-
-button:focus {
-  background: #2c3f57;
-  outline-style: solid;
-  outline-color: cornflowerblue;
-}
-
 /* Media Query */
 @media screen and (max-width: 932px) {
   html {
@@ -293,26 +266,12 @@ button:focus {
     padding: 2rem;
   }
   .cloud {
-    height: 40rem;
     pointer-events: none;
-  }
-  .moving-cloud-1 {
-    z-index: -1;
-  }
-  .moving-cloud-2 {
-    z-index: -2;
-  }
-  .locations-head h3 {
-    background: rgba(19, 28, 39, 0.9);
-    -webkit-text-fill-color: white;
-  }
-  .form-wrapper {
-    width: 100%;
   }
   footer {
     text-align: center;
   }
   footer h5 {
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
   }
 }
