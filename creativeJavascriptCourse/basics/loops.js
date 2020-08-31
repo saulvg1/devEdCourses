@@ -12,3 +12,6 @@ let text = ["hi", "there", "how", "are", "you", "?"];
 for (let i = 0; i < text.length; i++) {
   console.log(text[i]);
 }
+
+// for each
+//specifically for arrays
