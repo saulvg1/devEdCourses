@@ -4,17 +4,25 @@
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Document</title>
+    <link rel='stylesheet' href='style.css'>
+    |
+    <script src="localStorage.js"></script>
+    <title>Dom manipulation</title>
 </head>
 
 <body>
     <ul id='todo-list'>
-        <!-- hey this is weree the stufff is  -->
-        <li class='item'>item1</li>
-        <li class='item'>item2</li>
+        <!-- hey this is where the stuff is generated -->
+
     </ul>
-    <h2 class="todo-nr"></h2>
-    <script src='./dom.js'></script>
+    <h2 class="todo-nr">Number of items we have:<b></b></h2>
+    <form>
+        <input type='text' name="name" class="name-input">
+        <button id='submit'>Submit</button>
+    </form>
+    <h1 class="main-title">My Website</h1>
+    <!-- <script src='./dom.js'></script> -->
+    <script src='./events.js'></script>
 </body>
 
 </html>
