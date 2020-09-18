@@ -186,10 +186,42 @@ function openPalette(e) {
   saveContainer.classList.add('active');
   popup.classList.add('active');
 }
+submitSave.addEventListener('click', savePalette);
+
 function closePalette(e) {
   const popup = saveContainer.children[0];
   saveContainer.classList.remove('active');
   popup.classList.remove('active');
+}
+function savePalette(e) {
+  const popup = saveContainer.children[0];
+  saveContainer.classList.remove('active');
+  popup.classList.remove('active');
+  const name = saveInput.value;
+  const colors = [];
+  currentHexes.forEach((hex) => {
+    colors.push(hex.innerText);
+  });
+  //Generate Object
+  let paletteNbr = savedPalettes.length;
+  const paletteObject = { name, colors, nr: paletteNbr };
+  console.log(paletteObject);
+  savedPalettes.push(paletteObject);
+  // console.log(savedPalettes);
+  //save to local storage
+  savetoLocal(paletteObject);
+  saveInput.value = '';
+}
+
+function savetoLocal(paletteObj) {
+  let localPalettes;
+  if (localStorage.getItem('getPalettes') === null) {
+    localPalettes = [];
+  } else {
+    localPalettes = JSON.parse(localStorage.getItem('palettes'));
+  }
+  localPalettes.push(paletteObj);
+  localStorage.setItem('palettes', JSON.stringify(localPalettes));
 }
 
 randomColor();
