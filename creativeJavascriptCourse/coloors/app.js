@@ -13,7 +13,6 @@ const sliderContainers = document.querySelectorAll('.sliders');
 
 //event listeners
 generateBtn.addEventListener('click', randomColor);
-``;
 sliders.forEach((slider) => {
   slider.addEventListener('input', hslControls);
 });
@@ -62,7 +61,6 @@ function randomColor() {
     } else {
       initialColors.push(chroma(randomColor).hex());
     }
-
     //Add the color to the bg
     div.style.backgroundColor = randomColor;
     hexText.innerText = randomColor;
