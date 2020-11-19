@@ -22,6 +22,8 @@ body {
   width: 80%;
   margin: auto;
   padding: 2rem;
+  z-index: 2;
+  position: relative;
 }
 .line1,
 .line2 {
@@ -188,4 +190,7 @@ body {
 
 .scrollmagic-pin-spacer {
   position: static !important;
+}
+body.hide {
+  overflow: hidden;
 }
