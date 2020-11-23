@@ -21,7 +21,7 @@ function animateSlides() {
     slideT1.fromTo(revealImg, { x: '0%' }, { x: '100%' });
     slideT1.fromTo(img, { scale: 2 }, { scale: 1 }, '-=1');
     slideT1.fromTo(revealText, { x: '0%' }, { x: '100%' }, '-=0.75');
-    slideT1.fromTo(nav, { y: '-100%' }, { y: '0%' }, '-=0.25');
+
     //create scene
     slideScene = new ScrollMagic.Scene({
       triggerElement: slide,
@@ -121,12 +121,6 @@ barba.init({
       beforeEnter() {
         logo.href = '../index.html';
         detailAnimation();
-        gsap.fromTo(
-          '.nav-header',
-          1,
-          { y: '100%' },
-          { y: '0%', ease: 'power2.inOut' }
-        );
       },
       beforeLeave() {
         controller.destroy();
@@ -161,7 +155,15 @@ barba.init({
           { x: '100%', stagger: 0.5, oncomplete: done },
           '-=0.5'
         );
+
         t1.fromTo(next.container, 1.25, { opacity: 0 }, { opacity: 1 });
+        t1.fromTo(
+          '.nav-header',
+          1,
+          { y: '-100%' },
+          { y: '0%', ease: 'power2.inOut' },
+          '-=1.5'
+        );
       },
     },
   ],
