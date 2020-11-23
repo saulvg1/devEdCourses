@@ -1,6 +1,7 @@
 let controller;
 let slideScene;
 let pageScene;
+let detailScene;
 function animateSlides() {
   //init controller
   controller = new ScrollMagic.Controller();
@@ -119,12 +120,17 @@ barba.init({
       namespace: 'fashion',
       beforeEnter() {
         logo.href = '../index.html';
+        detailAnimation();
         gsap.fromTo(
           '.nav-header',
           1,
           { y: '100%' },
           { y: '0%', ease: 'power2.inOut' }
         );
+      },
+      beforeLeave() {
+        controller.destroy();
+        detailScene.destroy();
       },
     },
   ],
@@ -137,7 +143,7 @@ barba.init({
         t1.fromTo(current.container, 1, { opacity: 1 }, { opacity: 0 });
         t1.fromTo(
           '.swipe',
-          0.75,
+          0.5,
           { x: '-100%' },
           { x: '0%', oncomplete: done },
           '-=0.5'
@@ -160,7 +166,33 @@ barba.init({
     },
   ],
 });
-//eventlisteneres
+function detailAnimation() {
+  controller = new ScrollMagic.Controller();
+  const slides = document.querySelectorAll('.detail-slide');
+  slides.forEach((slide, index, slides) => {
+    const slideT1 = gsap.timeline({ defaults: { duration: 1 } });
+    let nextSlide = slides.length - 1 === index ? 'end' : slides[index + 1];
+    const nextImg = nextSlide.querySelector('img');
+    slideT1.fromTo(slide, { opacity: 1 }, { opacity: 0 });
+    slideT1.fromTo(nextSlide, { opacity: 0 }, { opacity: 1 }, '-=1');
+    slideT1.fromTo(nextImg, { x: '50%' }, { x: '0%' });
+
+    detailScene = new ScrollMagic.Scene({
+      triggerElement: slide,
+      duration: '100%',
+      triggerHook: 0,
+    })
+      .setPin(slide, { pushFollowers: false })
+      .setTween(slideT1)
+      .addIndicators({
+        colorStart: 'white',
+        colorTrigger: 'white',
+        name: 'detailScene',
+      })
+      .addTo(controller);
+  });
+}
+//event listeners
 burger.addEventListener('click', navToggle);
 window.addEventListener('mousemove', cursor);
 window.addEventListener('mouseover', activeCursor);
