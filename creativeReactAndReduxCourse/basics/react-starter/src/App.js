@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 //import components
 import TweetList from './components/tweetList';
 import CreateTweet from './components/createTweet';
@@ -6,6 +6,10 @@ import './styles/tweet.scss';
 
 function App() {
   //State
+  //use effect takes two arguments
+  useEffect(() => {
+    console.log('We run a function yeyy');
+  }, []);
   const [name, setName] = useState('dev ed');
   const [textInput, setTextInput] = useState('');
   const [tweets, setTweets] = useState([]);
