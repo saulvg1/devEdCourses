@@ -2,6 +2,7 @@ import { useState } from 'react';
 //import components
 import TweetList from './components/tweetList';
 import CreateTweet from './components/createTweet';
+import './styles/tweet.scss';
 
 function App() {
   //State
