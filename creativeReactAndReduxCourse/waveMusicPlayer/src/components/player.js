@@ -6,12 +6,18 @@ import {
   faAngleRight,
 } from '@fortawesome/free-solid-svg-icons';
 
-const Player = ({ currentSong }) => {
+const Player = ({ currentSong, isPlaying, setIsPlaying }) => {
   //ref , the useRef needs to be the child of the exported function
   const audioRef = useRef(null);
   //eventHandlers
   const playSongHandler = () => {
-    console.log(audioRef);
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(!isPlaying);
+    } else {
+      audioRef.current.play();
+      setIsPlaying(!isPlaying);
+    }
   };
   return (
     <div className="player">
