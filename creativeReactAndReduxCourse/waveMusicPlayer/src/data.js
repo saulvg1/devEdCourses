@@ -61,6 +61,16 @@ function chillHop() {
       id: uuidv4(),
       active: false,
     },
+    {
+      name: 'Lagoons',
+      artist: 'Strehlow, Chris Mazuera',
+      id: uuidv4(),
+      active: false,
+      color: ['#BA4A46', '#FDF0DD'],
+      cover:
+        'https://chillhop.com/wp-content/uploads/2020/06/49f6e32ca521fbad46a1b281e3893cf6254bf11d-1024x1024.jpg',
+      audio: 'https://mp3.chillhop.com/serve.php/?mp3=8266',
+    },
     //ADD MORE HERE
   ];
 }
