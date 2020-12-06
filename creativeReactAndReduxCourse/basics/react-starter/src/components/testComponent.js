@@ -4,7 +4,7 @@ function TestComponent() {
   return (
     <div>
       <h2>Hello</h2>
-      <h3>From Test compoent</h3>
+      <h3>From Test component</h3>
     </div>
   );
 }

@@ -1,7 +1,13 @@
+//adding components
+import Player from './components/player.js';
+import Song from './components/song.js';
+
 function App() {
   return (
     <div className="App">
-      <h2>This is the react project for music player</h2>
+      <h1>Music player</h1>
+      <Song />
+      <Player />
     </div>
   );
 }

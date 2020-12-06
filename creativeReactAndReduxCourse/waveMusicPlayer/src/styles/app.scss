@@ -4,5 +4,6 @@
   box-sizing: border-box;
 }
 html {
-  font-size: 65%;
 }
+@import './_song.scss';
+@import './_player.scss';
