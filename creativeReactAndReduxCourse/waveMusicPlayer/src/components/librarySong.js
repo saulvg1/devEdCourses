@@ -1,3 +1,4 @@
+import { playAudio } from '../util.js';
 const LibrarySong = ({
   setSongs,
   songs,
@@ -10,6 +11,7 @@ const LibrarySong = ({
   const songSelectHandler = () => {
     setCurrentSong(song);
     //add active state
+    playAudio(isPlaying, audioRef);
   };
 
   return (
