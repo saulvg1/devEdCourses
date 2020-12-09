@@ -19,6 +19,7 @@
   align-items: center;
   cursor: pointer;
   padding: 1rem 2rem;
+  transition: background 0.75s ease;
   img {
     width: 30%;
   }
@@ -56,4 +57,9 @@
 .active-library {
   transform: translateX(0%);
   opacity: 1;
+}
+@media screen and (max-width: 768px) {
+  .library {
+    width: 100%;
+  }
 }
