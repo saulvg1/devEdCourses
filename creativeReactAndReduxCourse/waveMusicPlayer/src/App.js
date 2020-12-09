@@ -9,7 +9,7 @@ import data from './data.js';
 
 function App() {
   //ref , the useRef needs to be the child of the exported function
-  const audioRef = useRef(null);
+  const audioref = useRef(null);
   //State
   const [songs, setSongs] = useState(data());
   const [currentSong, setCurrentSong] = useState(songs[0]);
@@ -28,7 +28,7 @@ function App() {
       <Song currentSong={currentSong} />
       <Player
         isPlaying={isPlaying}
-        audioRef={audioRef}
+        audioref={audioref}
         setIsPlaying={setIsPlaying}
         currentSong={currentSong}
         setSongInfo={setSongInfo}
@@ -40,7 +40,7 @@ function App() {
       <Library
         songs={songs}
         setCurrentSong={setCurrentSong}
-        audioRef={audioRef}
+        audioref={audioref}
         isPlaying={isPlaying}
         setSongs={setSongs}
         libraryStatus={libraryStatus}

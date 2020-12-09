@@ -3,7 +3,7 @@ const Library = ({
   songs,
   setCurrentSong,
   setSongs,
-  audioRef,
+  audioref,
   isPlaying,
   libraryStatus,
 }) => {
@@ -19,7 +19,7 @@ const Library = ({
               song={song}
               id={song.id}
               key={song.id}
-              audioRef={audioRef}
+              audioref={audioref}
               isPlaying={isPlaying}
               setSongs={setSongs}
             />
