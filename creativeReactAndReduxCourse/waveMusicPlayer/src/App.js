@@ -4,7 +4,7 @@ import Player from './components/player.js';
 import Song from './components/song.js';
 import Library from './components/library.js';
 import Nav from './components/nav.js';
-//import util
+//import data
 import data from './data.js';
 
 function App() {

@@ -1,17 +1,8 @@
-import { playAudio } from '../util.js';
-const LibrarySong = ({
-  setSongs,
-  songs,
-  song,
-  id,
-  setCurrentSong,
-  audioRef,
-  isPlaying,
-}) => {
-  const songSelectHandler = () => {
-    setCurrentSong(song);
+const LibrarySong = ({ song, setCurrentSong, audioRef, isPlaying }) => {
+  const songSelectHandler = async () => {
+    await setCurrentSong(song);
     //add active state
-    playAudio(isPlaying, audioRef);
+    if (isPlaying) audioRef.current.play();
   };
 
   return (
