@@ -1,6 +1,10 @@
+//React router
+import { Switch, Route } from 'react-router-dom';
 //component imports
 import Nav from './components/nav.js';
 import AboutUs from './pages/aboutUs.js';
+import OurWork from './pages/ourWork.js';
+import ContactUs from './pages/contactUs.js';
 
 import GlobalStyle from './components/globalStyle.js';
 function App() {
@@ -8,7 +12,19 @@ function App() {
     <div className="App">
       <GlobalStyle />
       <Nav />
-      <AboutUs />
+      <Switch>
+        <Route path="/" exact>
+          <AboutUs />
+        </Route>
+
+        <Route path="/work" exact>
+          <OurWork />
+        </Route>
+
+        <Route path="/contact" exact>
+          <ContactUs />
+        </Route>
+      </Switch>
     </div>
   );
 }
