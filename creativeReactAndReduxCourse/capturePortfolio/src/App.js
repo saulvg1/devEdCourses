@@ -1,11 +1,13 @@
 //React router
 import { Switch, Route, useLocation } from 'react-router-dom';
+
 //component imports
 import Nav from './components/nav.js';
 import AboutUs from './pages/aboutUs.js';
 import OurWork from './pages/ourWork.js';
 import ContactUs from './pages/contactUs.js';
 import MovieDetail from './pages/movieDetail.js';
+
 //animation
 import { AnimatePresence } from 'framer-motion';
 
@@ -15,6 +17,7 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle />
+
       <Nav />
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>

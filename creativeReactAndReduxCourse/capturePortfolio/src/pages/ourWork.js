@@ -16,6 +16,7 @@ import { useScroll } from '../components/useScroll.js';
 import athlete from '../img/athlete-small.png';
 import theracer from '../img/theracer-small.png';
 import goodtimes from '../img/goodtimes-small.png';
+import ScrollTop from '../components/scrollTop.js';
 
 const OurWork = () => {
   const [element, controls] = useScroll();
@@ -67,6 +68,7 @@ const OurWork = () => {
           </Hide>
         </Link>
       </Movie>
+      <ScrollTop />
     </Work>
   );
 };
