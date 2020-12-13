@@ -10,6 +10,7 @@ import {
   slider,
   sliderContainer,
 } from '../animation.js';
+import { useScroll } from '../components/useScroll.js';
 
 //images
 import athlete from '../img/athlete-small.png';
@@ -17,6 +18,8 @@ import theracer from '../img/theracer-small.png';
 import goodtimes from '../img/goodtimes-small.png';
 
 const OurWork = () => {
+  const [element, controls] = useScroll();
+  const [element2, controls2] = useScroll();
   return (
     <Work
       variants={pageAnimation}
@@ -41,18 +44,23 @@ const OurWork = () => {
           </Hide>
         </Link>
       </Movie>
-      <Movie>
+      <Movie ref={element} variants={fade} animate={controls} initial="hidden">
         <motion.h2 variants={fade}>The Racer</motion.h2>
-        <motion.div className="line"></motion.div>
+        <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/the-racer">
           <Hide>
             <motion.img variants={photoAnim} src={theracer} alt="theracer" />
           </Hide>
         </Link>
       </Movie>
-      <Movie>
+      <Movie
+        ref={element2}
+        variants={fade}
+        animate={controls2}
+        initial="hidden"
+      >
         <motion.h2 variants={fade}>Good Times</motion.h2>
-        <motion.div className="line"></motion.div>
+        <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/good-times">
           <Hide>
             <motion.img variants={photoAnim} src={goodtimes} alt="goodtimes" />
@@ -72,7 +80,7 @@ const Work = styled(motion.div)`
 `;
 const Movie = styled(motion.div)`
   padding-bottom: 10rem;
-  /* color: white; */
+
   .line {
     height: 0.5rem;
     background: #23d997;
