@@ -6,6 +6,8 @@ import { motion } from 'framer-motion';
 //redux
 import { useDispatch } from 'react-redux';
 import loadDetail from '../actions/detailAction';
+//imports
+import { smallImage } from '../util.js';
 
 const Game = ({ name, released, image, id }) => {
   //load details loadDetailHandler
@@ -19,7 +21,7 @@ const Game = ({ name, released, image, id }) => {
       <Link to={`/game/${id}`}>
         <h3>{name}</h3>
         <p>{released}</p>
-        <img src={image} alt={name} />
+        <img src={smallImage(image, 640)} alt={name} />
       </Link>
     </StyledGame>
   );
@@ -33,6 +35,7 @@ const StyledGame = styled(motion.div)`
   overflow: hidden;
   img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
