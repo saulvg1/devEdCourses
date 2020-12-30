@@ -12,4 +12,5 @@ const loadDetail = (id) => async (dispatch) => {
     },
   });
 };
+
 export default loadDetail;
